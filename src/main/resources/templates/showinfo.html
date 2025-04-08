@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div th:text="${rohim}">
+    <div th:each="contact : ${rohim}">
+        <p>Name: <span th:text="${contact.name}"></span></p>
+        <p>Number: <span th:text="${contact.number}"></span></p>
+        <p>Email: <span th:text="${contact.email}"></span></p>
+        <p>Message: <span th:text="${contact.message}"></span></p>
+        <hr/>
+    </div>
+ </div>
+ <div th:text="${ratul}">
+    <div th:each="contact : ${ratul}">
+        <p>Name: <span th:text="${contact.name}"></span></p>
+        <p>Number: <span th:text="${contact.number}"></span></p>
+        <p>Email: <span th:text="${contact.email}"></span></p>
+        <p>Message: <span th:text="${contact.message}"></span></p>
+        <hr/>
+    </div>
+ </div>
+
+<a href=""></a>
+ <form th:action="@{/showbyid}">
+    <input type="text" name="id">
+    <button type="submit" >chick</button>
+
+</form>
+</body>
+
+</html>
