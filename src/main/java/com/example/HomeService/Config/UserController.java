@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
+import com.example.HomeService.Entity.UserSeInfo;
 import com.example.HomeService.Entity.contactinfo;
 import com.example.HomeService.IMPL.entityService;
 
@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
     @Autowired
     private entityService Entityse;
+    private CustomUserDetailsService service;
   
     @GetMapping("/")
     public String index() {
@@ -63,6 +64,17 @@ public class UserController {
         me.addAttribute("rohim", l1);
         return "redirect:/showinfo";
     }
+//     @GetMapping()
+//    public String showlogin(){
+//     return "signup";
+//    }
+    @PostMapping("/login")
+public String register(@ModelAttribute UserSeInfo user) {
+    user.setRole("ROLE_USER"); // or "ROLE_ADMIN"
+    //service.register(user);
+    return "redirect:/login";
+}
+
 
     
     
